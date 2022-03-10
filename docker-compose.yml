@@ -1,0 +1,11 @@
+version: '1'
+
+services:
+  # Redis 
+  redis:
+    container_name: "redis-db"
+    image: redis:latest 
+    volumes:
+      - ./.docker/redis/data:/data
+    ports:
+      - 6379:6379
