@@ -14,17 +14,19 @@ func HandleCreateTodo(c *gin.Context) {
 	var newTodo m.Todo
 
 	if err := c.BindJSON(&newTodo); err != nil {
-		return
+		panic(err)
 	}
 
-	bytes, err := json.Marshal(c.Request.Body)
+	bytes, err := json.Marshal(newTodo)
 	if err != nil {
 		c.IndentedJSON(http.StatusBadRequest, gin.H{"error": "bad request"})
 	}
 
-	redisErr := db.RedisClient.Set(c, (db.TodoPrefix + newTodo.ID), bytes, 0).Err()
+	var key string = db.TodoPrefix + newTodo.ID
 
-	if redisErr != nil {
+	err = db.RedisClient.Set(c, key, bytes, 0).Err()
+
+	if err != nil {
 		panic(err)
 	}
 
