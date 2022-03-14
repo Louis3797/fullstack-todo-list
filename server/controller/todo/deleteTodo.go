@@ -11,10 +11,11 @@ func HandleDeleteTodo(c *gin.Context) {
 
 	id := c.Param("id")
 
-	var key string = db.TodoPrefix + id
+	key := db.TodoPrefix + id
+
 	err := db.RedisClient.Del(c, key).Err()
 
-	if err == nil {
+	if err != nil {
 		c.IndentedJSON(http.StatusBadRequest, gin.H{"message": "Not OK"})
 		return
 	}

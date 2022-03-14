@@ -22,7 +22,7 @@ func HandleCreateTodo(c *gin.Context) {
 		c.IndentedJSON(http.StatusBadRequest, gin.H{"error": "bad request"})
 	}
 
-	var key string = db.TodoPrefix + newTodo.ID
+	key := db.TodoPrefix + newTodo.ID
 
 	err = db.RedisClient.Set(c, key, bytes, 0).Err()
 

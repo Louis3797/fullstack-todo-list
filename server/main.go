@@ -23,7 +23,7 @@ func main() {
 	r.GET("/todo/:id", todo.HandleGetTodo)
 	r.POST("/create-todo", todo.HandleCreateTodo)
 	r.PATCH("/todo/:id", todo.HandleUpdateTodo)
-	r.DELETE("/delete-todo:id", todo.HandleDeleteTodo)
+	r.DELETE("/delete-todo/:id", todo.HandleDeleteTodo)
 
 	r.Run("localhost:4000")
 
