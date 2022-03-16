@@ -1,3 +1,5 @@
+const colors = require("tailwindcss/colors");
+
 module.exports = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx}",
@@ -13,6 +15,7 @@ module.exports = {
       secondary: "#3F72AF",
       accent: "#112D4E",
       white: "#ffffff",
+      red: colors.red,
     },
     extend: {},
   },
