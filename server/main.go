@@ -2,6 +2,7 @@ package main
 
 import (
 	"github.com/Louis3797/fullstack-todo-list/server/controller/todo"
+	"github.com/gin-contrib/cors"
 
 	"github.com/Louis3797/fullstack-todo-list/server/db"
 
@@ -18,6 +19,10 @@ func main() {
 	db.InitRedis()
 
 	r := gin.Default()
+	config := cors.DefaultConfig()
+	config.AllowOrigins = []string{"http://localhost:3000"}
+
+	r.Use(cors.New(config))
 
 	r.GET("/", todo.HandleGetAllTodos)
 	r.GET("/todo/:id", todo.HandleGetTodo)
