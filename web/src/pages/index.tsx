@@ -34,13 +34,6 @@ const Home: NextPage<HomeProps> = ({ data }) => {
     }
   }
 
-  useEffect(() => {
-    data.sort((a: Todo, b: Todo) => {
-      // @ts-ignore
-      return moment(moment.unix(b.created_at)).diff(moment.unix(a.created_at));
-    });
-  });
-
   return (
     <div className="flex flex-col w-screen h-full justify-start items-center">
       <div className="flex flex-col h-96 py-5 justify-between items-start w-2/4 mb-10">
@@ -89,6 +82,10 @@ export const getServerSideProps: GetServerSideProps = async () => {
   const res = await instance.get(`http://localhost:4000`);
 
   const data: Todo[] = await res.data;
+  data.sort((a: Todo, b: Todo) => {
+    return moment(moment.unix(b.created_at)).diff(moment.unix(a.created_at));
+  });
+
   return {
     props: { data },
   };
