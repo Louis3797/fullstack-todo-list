@@ -1,7 +1,7 @@
 import TodoCard from "@/components/TodoCard";
 import moment from "moment";
 import type { GetServerSideProps, NextPage } from "next";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Todo } from "types";
 import { instance } from "utils/http";
 import { v4 } from "uuid";
