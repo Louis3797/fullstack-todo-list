@@ -107,7 +107,7 @@ A todo list built with Next.js, Golang, Redis, REST and Docker.
 
 - [x] Setup Docker Compose with Redis
 - [x] Golang Server
-- [ ] Create Frontend
+- [x] Create Frontend
 
 <!-- LICENSE -->
 ## License
