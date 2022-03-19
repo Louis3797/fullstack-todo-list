@@ -1,11 +1,21 @@
-version: '1'
+version: '2'
 
 services:
   # Redis 
   redis:
-    container_name: "redis-db"
     image: redis:latest 
     volumes:
       - ./.docker/redis/data:/data
     ports:
       - 6379:6379
+     
+  # Golang Server
+  server:
+    build: ./server
+    ports: 
+      - 4000:4000
+    depends_on:
+      - redis
+
+
+  
