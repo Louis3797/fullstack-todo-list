@@ -24,16 +24,13 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/Louis3797/fullstack-todo-list">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a>
 
-<h3 align="center">project_title</h3>
+<h3 align="center">Fullstack Todo List</h3>
 
   <p align="center">
     Fullstack Todo List
     <br />
-    <a href="https://github.com/Louis3797/fullstack-todo-liste"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/Louis3797/fullstack-todo-list"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://github.com/Louis3797/fullstack-todo-list">View Demo</a>
@@ -60,8 +57,6 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
 
 A todo list built with Next.js, Golang, Redis, REST and Docker.
 
@@ -138,5 +133,3 @@ Project Link: [Click here](https://github.com/Louis3797/fullstack-todo-list)
 [issues-url]: https://github.com/Louis3797/fullstack-todo-list/issues
 [license-shield]: https://img.shields.io/github/license/Louis3797/fullstack-todo-list.svg?style=for-the-badge
 [license-url]: https://github.com/Louis3797/fullstack-todo-list/blob/master/LICENSE.txt
-
-[product-screenshot]: images/screenshot.png
