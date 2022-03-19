@@ -20,7 +20,6 @@ const Home: NextPage<HomeProps> = ({ data }) => {
         text: input,
         status: false,
         created_at: Date.now(),
-        until: 1,
       };
 
       instance
@@ -36,8 +35,8 @@ const Home: NextPage<HomeProps> = ({ data }) => {
 
   return (
     <div className="flex flex-col w-screen h-full justify-start items-center">
-      <div className="flex flex-col h-96 py-5 justify-between items-start w-2/4 mb-10">
-        <h1 className="text-4xl font-bold text-accent mt-10 mb-10">
+      <div className="flex flex-col h-96 py-5 justify-around items-start w-2/4">
+        <h1 className="text-5xl font-bold text-secondary mt-10 mb-10">
           Todo List
         </h1>
 
@@ -50,7 +49,7 @@ const Home: NextPage<HomeProps> = ({ data }) => {
             onChange={(e) => setInput(e.target.value)}
             value={input}
             minLength={1}
-            className="rounded-md w-full mr-20 bg-primary p-2 focus:outline-none text-accent font-semibold focus:placeholder:"
+            className="rounded-md w-full mr-20 bg-primary p-2 focus:outline-none text-accent font-semibold"
             placeholder="What else need you todo ??"
           />
           <button
